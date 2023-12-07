@@ -1,2 +1,5 @@
 yarn add styled-components
 yarn add react-native-safe-area-context
+npx expo install @expo-google-fonts/inter expo-font
+npx expo install @expo-google-fonts/oswald  expo-font
+npx expo install @expo-google-fonts/lato  expo-font  
