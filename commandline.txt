@@ -1,0 +1,2 @@
+yarn add styled-components
+yarn add react-native-safe-area-context
