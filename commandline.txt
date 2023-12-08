@@ -6,3 +6,9 @@ npx expo install @expo-google-fonts/lato  expo-font
 
 npx expo install react-native-svg
 
+https://reactnavigation.org/docs/getting-started/
+yarn add @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+yarn add react-native-screens react-native-safe-area-context
+
+yarn add @react-navigation/bottom-tabs
