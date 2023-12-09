@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext }from "react";
 import { SvgXml } from "react-native-svg";
 import open from "../../../../assets/open";
 
