@@ -4,8 +4,7 @@ import { Ionicons } from "@expo/vector-icons"
 import { NavigationContainer } from "@react-navigation/native"
 
 import { SafeArea } from "../../components/utility/safe-area.component";
-import { RestaurantsScreen } from "../../features/restaurants/screen/restaurants.screen";
-
+import { RestaurantsNavigator } from "./restaurants.navigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -46,7 +45,7 @@ const createScreenOptions = ({ route }) => {
 export const AppNavigator = () => (
     <NavigationContainer>
         <Tab.Navigator screenOptions={createScreenOptions}>
-            <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+            <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
             <Tab.Screen name="Map" component={Map} />
             <Tab.Screen name="Settings" component={Settings} />
         </Tab.Navigator>

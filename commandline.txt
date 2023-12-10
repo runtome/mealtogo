@@ -14,3 +14,6 @@ yarn add react-native-screens react-native-safe-area-context
 yarn add @react-navigation/bottom-tabs
 
 npm install camelize
+
+yarn add @react-navigation/stack
+npx expo install react-native-gesture-handler
