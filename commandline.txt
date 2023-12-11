@@ -17,3 +17,5 @@ npm install camelize
 
 yarn add @react-navigation/stack
 npx expo install react-native-gesture-handler
+
+npx expo install react-native-maps
