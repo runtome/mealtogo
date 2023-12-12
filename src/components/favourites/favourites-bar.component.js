@@ -9,6 +9,7 @@ const FavouritesWrapper = styled.View`
   padding: 10px;
 `;
 export const FavouritesBar = ({ favourites, onNavigate }) => {
+  console.log('favourites',favourites)
   if (!favourites.length) {
     return null;
   }
@@ -19,8 +20,11 @@ export const FavouritesBar = ({ favourites, onNavigate }) => {
       </Spacer>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {favourites.map((restaurant) => {
-          const key = restaurant.name;
+        {favourites.map((restaurant, index) => {
+          if (!restaurant || Object.keys(restaurant).length === 0) {
+            return null; // Skip rendering for empty objects
+          }
+          const key = `restaurant_${index}`;
           return (
             <Spacer key={key} position="left" size="medium">
               <TouchableOpacity
