@@ -1,7 +1,9 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React from "react";
+import React , { useState , useEffect} from "react";
 import { ThemeProvider } from "styled-components/native";
-import * as firebase from "firebase";
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 
 import {
   useFonts as useOswald,
@@ -15,30 +17,38 @@ import { LocationContextProvider } from "./src/services/location/location.contex
 import { AppNavigator } from "./src/infrastructure/navigation/app.navigator";
 import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
 
-import { 
-  apiKey, 
-  authDomain, 
-  projectId, 
-  storageBucket, 
-  messagingSenderId, 
-  appId,
-  measurementId
-} from '@env';
 
 const firebaseConfig = {
-  apiKey: apiKey,
-  authDomain: authDomain,
-  projectId: projectId,
-  storageBucket: storageBucket,
-  messagingSenderId: messagingSenderId,
-  appId: appId,
-  measurementId: measurementId
+  apiKey: " ",
+  authDomain: " ",
+  projectId: " ",
+  storageBucket: " ",
+  messagingSenderId: " ",
+  appId: " ",
+  measurementId: " "
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth(firebaseApp);
 
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      signInWithEmailAndPassword(auth, "noname@mail.com", "test1234")
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user); // For seeing user (testing)
+          setIsAuthenticated(true);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, 2000);
+  }, []);
+
+
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
