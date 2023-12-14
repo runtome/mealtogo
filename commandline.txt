@@ -25,3 +25,5 @@ npx expo install react-native-webview
 
 npx expo install firebase
 npm install react-native-dotenv --save-dev
+
+yarn add lottie-react-native
