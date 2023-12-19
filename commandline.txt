@@ -29,4 +29,9 @@ npm install react-native-dotenv --save-dev
 yarn add lottie-react-native
 
  npm install -g eas-cli
+
+
+npx expo install expo-camera
+
+
  
